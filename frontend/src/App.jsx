@@ -10,25 +10,21 @@ import ResetPassword from "./pages/ResetPassword";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Toaster />
-
-      <Routes>
-        <Route path="/" element={<Register />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="reset-password/:token" element={<ResetPassword />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Register />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="reset-password/:token" element={<ResetPassword />} />
+    </Routes>
   );
 }
 
